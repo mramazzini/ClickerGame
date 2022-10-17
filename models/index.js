@@ -10,7 +10,8 @@ Achievement.belongsTo(User, {
 GameData.belongsTo(User, {
     foreignKey: 'user_id'
 })
-User.HasMany(Achievement, {
+User.hasMany(Achievement, {
     foreignKey: 'user_id'
 })
 
+module.exports = { User, GameData, Achievement };

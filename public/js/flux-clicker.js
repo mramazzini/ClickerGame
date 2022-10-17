@@ -1,5 +1,7 @@
+
 const fluxClick = async (event) => {
-    console.log('allo');
+        
+    
 
     
 }

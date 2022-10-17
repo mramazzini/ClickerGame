@@ -37,4 +37,4 @@ Achievement.init(
       }
 )
 
-model.exports = Achievement;
+module.exports = Achievement;
