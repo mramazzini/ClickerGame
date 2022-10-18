@@ -10,6 +10,7 @@ class User extends Model {
 
 User.init(
     {
+        
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -19,6 +20,11 @@ User.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        flux:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         },
         email: {
             type: DataTypes.STRING,

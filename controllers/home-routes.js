@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { GameData,Achievement, User } = require('../models');
+const {Achievement, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async(req, res) =>{
@@ -12,7 +12,15 @@ router.get('/game', withAuth, async(req,res) =>{
         res.redirect('/login');
         return;
     }
+    const gameData = await User.findOne({ where: { id: req.session.user_id } });
+ 
+    
+    console.log(gameData);
+
+    const game = gameData.get({ plain: true });
+
     res.render('game', {
+        game,
         logged_in: req.session.logged_in,
     });
 })
