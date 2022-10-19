@@ -12,15 +12,8 @@ router.get('/game', withAuth, async(req,res) =>{
         res.redirect('/login');
         return;
     }
-    const gameData = await User.findOne({ where: { id: req.session.user_id } });
- 
-    
-    console.log(gameData);
-
-    const game = gameData.get({ plain: true });
-
     res.render('game', {
-        game,
+
         logged_in: req.session.logged_in,
     });
 })
