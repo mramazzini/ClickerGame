@@ -1,0 +1,15 @@
+<nav>
+        <div class="nav-wrapper indigo darken-4">
+            
+            <ul class="right indigo darken-3">
+                <li><a>Clicker</a></li>
+                <li><a>Achievements</a></li>
+                <li><a>Producer</a></li>
+                {{#if logged_in}}
+                <li><a class="logout waves-effect waves-light btn-large" style="font-weight:bold; margin-left:20px; background-color:#A2C7F9;">Logout</a></li>
+                {{else}}
+                <li><a class="login waves-effect waves-light btn-large" style="font-weight:bold; margin-left:20px; background-color:#A2C7F9;">Login</a></li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
