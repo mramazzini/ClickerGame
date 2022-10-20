@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
         // If your email and password work then it will replace the login screen with the next screen.
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/game');
             // If your email and password are incorrect it will send you an error
         } else {
             alert(response.statusText);

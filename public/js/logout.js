@@ -3,7 +3,7 @@ const logout = async () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     });
-    document.location.replace('/dashboard');
+    document.location.replace('/game');
 };
 
 document.querySelector('.logout').addEventListener('click', logout);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { GameData, User } = require('../../models');
+const { GameData, User, Note } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/flux', withAuth, async (req, res) => {
@@ -14,6 +14,19 @@ router.get('/flux', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/notes', withAuth, async (req, res) => {
+    try {
+        
+        const gameData = await Note.findOne({ where: { id: req.session.user_id } });
+       
+        res.status(200).json( gameData.dataValues.flux);
+        
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 router.put('/flux', withAuth, async (req,res) => {
     try {

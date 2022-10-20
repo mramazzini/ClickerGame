@@ -10,8 +10,7 @@ const fluxClick = async (event) => {
     if (request.status === 200) {
         let flux = parseInt(await request.text())+1;
         
-        fluxEl.innerHTML=flux;
-        console.log(flux)
+        fluxEl.innerHTML="Flux: " + flux;
         const response = await fetch('/api/flux/', {
             method: 'PUT',
             body: JSON.stringify({
