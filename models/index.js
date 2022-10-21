@@ -17,4 +17,4 @@ User.hasMany(Note,{
     foreignKey: 'user_id'
 });
 
-module.exports = { User,Achievement };
+module.exports = { User,Achievement, Note };

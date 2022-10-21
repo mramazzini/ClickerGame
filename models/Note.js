@@ -6,16 +6,9 @@ class Note extends Model {}
 
 Note.init(
     {
-        id:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
         time:{
             type: DataTypes.STRING,
             allowNull:false,
-            defaultValue: "quarter"
         },
         note_val: {
             type: DataTypes.STRING,
