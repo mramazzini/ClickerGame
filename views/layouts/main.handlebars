@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flux-clicker</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-  </head>
- <body>
-    {{>navbar}}
-    {{>notes}}
-    <main class="color4">
-        <wrapper>
-           {{{ body }}}
-        </wrapper>
 
-    </main>
-    {{>upgradeBar}}
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{else}}
-    <script src="/js/login.js"></script>
-    {{/if}}
-    
- </body>
+<head>
+   <title>Flux-clicker</title>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<style>
+   body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+   }
+
+   main {
+      flex: 1 0 auto;
+   }
+</style>
+
+
+<body>
+   <header>
+      {{>navbar}}
+   </header>
+   <main>
+      {{{ body }}}
+   </main>
+   <footer class="page-footer blue">
+      {{>upgradeBar}}
+   </footer>
+
+   {{#if logged_in}}
+   <script src="/js/logout.js"></script>
+   {{else}}
+   <script src="/js/login.js"></script>
+   {{/if}}
+
+</body>

@@ -20,7 +20,6 @@ const purchaseNote = async (event) => {
         } else {
             alert(response.statusText);
         }
-    
 }
 
 const viewNotes = async (event) => {
@@ -30,6 +29,8 @@ const viewNotes = async (event) => {
     });
         
     if (response.ok) {
+
+        //Sorts all of the user notes into objects with counts
         let res=await response.json();
         let userNotes = [];
         for(let i=0; i< res.length; i++){
@@ -43,7 +44,6 @@ const viewNotes = async (event) => {
             if(!resolved){
                 userNotes.push({time:res[i].time, note_val:res[i].note_val, count:1});
             }
-            
         }
        console.log(userNotes);
     } else {
